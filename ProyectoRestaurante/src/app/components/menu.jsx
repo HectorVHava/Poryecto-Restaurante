@@ -43,14 +43,16 @@ const SidebarMenu = ({ user }) => {
         {/* Encabezado del menú */}
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <div className="flex items-center gap-3">
-            <img
-              src={user.image}
-              alt="Usuario"
-              className="w-10 h-10 rounded-full object-cover"
-            />
+           {user?.image && (
+  <img
+    src={user.image}
+    alt="Usuario"
+    className="w-10 h-10 rounded-full object-cover"
+  />
+)}
             <div>
-              <h3 className="font-semibold text-gray-800">{user.name}</h3>
-              <p className="text-sm text-gray-500 capitalize">{user.role}</p>
+              <h3 className="font-semibold text-gray-800">{user?.name || "Usuario"}</h3>
+              <p className="text-sm text-gray-500 capitalize">{user?.role || "Invitado"}</p>
             </div>
           </div>
           <button onClick={() => setOpen(false)}>
@@ -61,6 +63,7 @@ const SidebarMenu = ({ user }) => {
         {/* Opciones de navegación */}
         <ul className="mt-2">
           {[
+            { name: 'Inicio', route: '/dashboard' },
             { name: 'Meseros', route: '/meseros' },
             { name: 'Mesas', route: '/mesas' },
             { name: 'Bebidas', route: '/bebidas' },

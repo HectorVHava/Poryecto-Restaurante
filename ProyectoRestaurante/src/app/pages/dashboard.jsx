@@ -9,6 +9,7 @@ const options = [
   { label: 'Comidas', img: '/icons/comidas.png', route: '/comidas' },
   { label: 'Postres', img: '/icons/postres.png', route: '/postres' },
   { label: 'Ordenes', img: '/icons/ordenes.png', route: '/ordenes' },
+  { label: 'Usuarios', img: '/icons/usuario.png', route: '/usuarios' },
 ];
 
 const Dashboard = () => {
